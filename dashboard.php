@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if(isset($_SESSION['user'])){
+    $user = json_decode( $_SESSION['user']);
+}else{
+    header('location: index.php');
+}
+    
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,15 +31,16 @@
         <ul class="links">
             <li class="active"><a href="a">Dashboard</a></li>
             <li><a href="a.html">Schedules</a></li>
-            <li><a href="a">User</a></li> 
+            <li><a href="a"><?php echo $user->username; ?></a></li> 
         </ul>
 
-        <button class="btnlogout">Log Out</button></a>
+        <button class="btnlogout" onclick="document.getElementById('logout').submit()">Log Out</button></a>
     </div>
 
+    <form id="logout" action="logout.php" method="post">
+    </form>
 
     <div class="container">
-
         <div class="row flex-center">
             <div class="box">
                 <div class="box-header">
