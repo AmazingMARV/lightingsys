@@ -31,7 +31,7 @@ if(isset($_SESSION['user'])){
         <ul class="links">
             <li class="active"><a href="a">Dashboard</a></li>
             <li><a href="a.html">Schedules</a></li>
-            <li><a href="a"><?php echo $user->username; ?></a></li> 
+            <li><a href="a"><?php echo strtoupper($user->username); ?></a></li> 
         </ul>
 
         <button class="btnlogout" onclick="document.getElementById('logout').submit()">Log Out</button></a>
@@ -83,13 +83,21 @@ if(isset($_SESSION['user'])){
             var switch1 = document.getElementById('togBtn1');
             let status1 = document.getElementById('status1');
 
+            let headers = new Headers();
+            headers.append('Content-Type', 'application/json');
+            headers.append('Accept', 'application/json');
+            headers.append('Access-Control-Allow-Origin', 'http://localhost:8080');
+            headers.append('Access-Control-Allow-Credentials', 'true');
+
             if(switch1.checked == true){
                 status1.innerHTML = "STATUS: ON";
                 status1.style.color = "green";
-                fetch('/url').then(res=>{
-                    console.log('test');
-                })
+
+               
+
+                fetch('http://192.168.0.50/ON')
             }else{
+                fetch('http://192.168.0.50/OFF')
                 status1.innerHTML = "STATUS: OFF";
                 status1.style.color = "red";
             }
