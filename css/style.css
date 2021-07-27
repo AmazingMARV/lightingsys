@@ -90,10 +90,6 @@ h1{
     border-collapse: collapse;
 }
 
-.table thead{
-    background-color: #ee2828;
-}
-
 .table thead tr th{
     font-size: 14px;
     font-weight: 600;
@@ -113,6 +109,7 @@ h1{
     padding: 8px;
     text-align: center;
     border: 1px solid #dee2e685;
+    color: white;
 }
 
 .table .text-open{

@@ -51,7 +51,7 @@ if(isset($_SESSION['user'])){
                     
                 </tr>
                 <tr>
-                    <td data-label="User ID">2</td>
+                    <td>2</td>
                     <td data-label="Username">admin</td>
                     <td data-label="Last Name">Santiago</td>
                     <td data-label="First Name">Noel</td>
